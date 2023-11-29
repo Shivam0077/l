@@ -1,0 +1,15 @@
+<div class="search-container">
+    <label for="search">Search for books:</label>
+    <input id="search" (input)="search($event)" [(ngModel)]="searchTerm" placeholder="Enter title or author" />
+  </div>
+  
+  <div *ngIf="books$ | async as books">
+    <ng-container *ngIf="searchTerm.length !== 0">
+    <div *ngFor="let book of books" class="search-result">
+        <h3>{{book.title}}</h3>
+      <button (click)="goToDetails(book.id)">View Details</button>
+      <p>{{ book.author }}</p>
+    </div>
+</ng-container>
+  </div>
+  

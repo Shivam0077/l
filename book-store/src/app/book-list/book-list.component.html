@@ -1,0 +1,15 @@
+<div class="card-container">
+    <app-book-search></app-book-search>
+
+  <div class="card" *ngFor="let book of books">
+<span class="image-container">
+    <img [src]="book.cover_image">
+  </span>
+   <!-- <button [routerLink]="['/book-Details', book.id]">View Details</button> -->
+  <button (click)="viewDetails(book.id)">View Details</button>
+
+    <h2>{{ book.title }}</h2>
+    <p>{{ book.author }}</p>
+
+  </div>
+</div>

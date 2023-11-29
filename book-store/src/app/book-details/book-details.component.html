@@ -1,0 +1,9 @@
+<div *ngIf="book" >
+    <button class="back" (click)="goBackToList()">back</button>
+    <h2>{{ book.title }}</h2>
+    <button class="cart-button">Add to cart</button>
+    <p>Author: {{ book.author }}</p>
+    <p>Description: {{ book.description }}</p>
+    <img style="width: 30vw;" [src]="book.cover_image">
+  </div>
+  
